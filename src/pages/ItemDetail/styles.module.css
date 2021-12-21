@@ -1,0 +1,37 @@
+.itemDetailContainer {
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.itemDetailImage {
+  border-radius: 15px;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+.itemDetailAction {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.itemImage {
+  align-self: center;
+  justify-self: center;
+  display: block;
+  height: auto;
+  margin-bottom: 10px;
+  width: 350px;
+}
+
+.backIcon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 15px;
+  width: 20px;
+}

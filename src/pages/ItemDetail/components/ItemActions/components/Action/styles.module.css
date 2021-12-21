@@ -1,0 +1,25 @@
+.actionContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.actionContainer > h4 {
+  margin: 10px 0;
+}
+
+.actionOptions {
+  display: flex;
+}
+
+.actionButton {
+  border: 0;
+  height: 35px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.actionButton:hover {
+  background-color: #a7d1a2;
+}

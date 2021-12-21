@@ -1,0 +1,14 @@
+.listContainer {
+  width: 100%;
+}
+
+.searchContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.searchTitle {
+  font-size: 34px;
+}
