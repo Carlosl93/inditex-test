@@ -7,21 +7,21 @@ function Description({ descriptionInfo }) {
   return (
     <div className={styles.descriptionContainer}>
       <h3>Descripción del producto</h3>
-      <p>
-        <b>Marca</b> - {brand}
-      </p>
-      <p>
-        <b>Modelo</b> - {model}
-      </p>
-      <p>
-        <b>Dimensiones</b> - {dimentions}
-      </p>
-      <p>
-        <b>Peso</b> - {weight}
-      </p>
-      <p>
-        <b>Precio</b> - {price}€
-      </p>
+      <div className={styles.rowText}>
+        <b>Marca</b> - <p>{brand}</p>
+      </div>
+      <div className={styles.rowText}>
+        <b>Modelo</b> - <p>{model}</p>
+      </div>
+      <div className={styles.rowText}>
+        <b>Dimensiones</b> - <p>{dimentions}</p>
+      </div>
+      <div className={styles.rowText}>
+        <b>Peso</b> - <p>{weight}</p>
+      </div>
+      <div className={styles.rowText}>
+        <b>Precio</b> - <p>{price}€</p>
+      </div>
     </div>
   );
 }

@@ -1,13 +1,18 @@
 /* eslint-disable no-undef */
-import axios from "axios";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { mocked } from "jest-mock";
 
-import itemsReducer, { itemsState, actions, getItems } from "../items";
-import { ITEMS_MOCK } from "../../mocks";
+import itemsReducer, {
+  itemsState,
+  actions,
+  getItems,
+  getSingleItem,
+  postCart,
+} from "../items";
+import { ITEMS_MOCK, ITEM_DETAIL_MOCK, CART_MOCK } from "../../mocks";
 import { getStoreWithState } from "../../store";
-import { fetchItems } from "../../api/services";
+import { fetchItems, fetchPostCart, fetchSingleItem } from "../../api/services";
 
 const mockStore = configureStore([thunk]);
 
@@ -15,8 +20,7 @@ afterEach(() => {
   jest.resetAllMocks();
 });
 
-jest.mock("axios");
-const mockedAxios = axios;
+jest.mock("../../api/services");
 
 describe("Items Reducer", () => {
   it("Should return the initial state when empty action", () => {
@@ -39,13 +43,45 @@ describe("Items Reducer", () => {
   });
 });
 
-// describe("Items Thunks", () => {
-//   it("getItems", async () => {
-//     mockedAxios.get.mockImplementation(() => Promise.resolve({ data: "hola" }));
-//     const store = mockStore(itemsState);
-//     await store.dispatch(getItems());
-//     const actionss = store.getActions();
-//     console.log(store.getState());
-//     // console.log(actionss[1].payload);
-//   });
-// });
+describe("Items Thunks", () => {
+  describe("getItems", () => {
+    it("Success", async () => {
+      const mockedAxios = mocked(fetchItems);
+      mockedAxios.mockImplementationOnce(() =>
+        Promise.resolve({ data: ITEMS_MOCK })
+      );
+      const store = mockStore(itemsState);
+      await store.dispatch(getItems());
+      const storeAction = store.getActions();
+      expect(storeAction[1].payload).toEqual(ITEMS_MOCK);
+    });
+  });
+
+  describe("getSingleItem", () => {
+    it("Success", async () => {
+      const mockedAxios = mocked(fetchSingleItem);
+      mockedAxios.mockImplementationOnce(() =>
+        Promise.resolve({ data: ITEM_DETAIL_MOCK })
+      );
+      const store = mockStore(itemsState);
+      await store.dispatch(getSingleItem({ id: "test" }));
+      const storeAction = store.getActions();
+      expect(storeAction[1].payload).toEqual(ITEM_DETAIL_MOCK);
+    });
+  });
+
+  describe("postCart", () => {
+    it("Success", async () => {
+      const mockedAxios = mocked(fetchPostCart);
+      mockedAxios.mockImplementationOnce(() =>
+        Promise.resolve({ data: CART_MOCK })
+      );
+      const store = mockStore(itemsState);
+      await store.dispatch(
+        postCart({ id: "test", colorCode: "test", storageCode: "test" })
+      );
+      const storeAction = store.getActions();
+      expect(storeAction[1].payload).toEqual(CART_MOCK);
+    });
+  });
+});

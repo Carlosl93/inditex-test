@@ -8,7 +8,7 @@ function Item({ item }) {
   const { brand, id, imgUrl, model, price } = item;
 
   return (
-    <div className={styles.itemContainer}>
+    <div data-testid="item" className={styles.itemContainer}>
       <img className={styles.itemImage} src={imgUrl} alt={brand} />
       <div className={styles.infoContainer}>
         <p className={styles.itemBrand}>{brand}</p>

@@ -1,9 +1,10 @@
+/* eslint-disable no-undef */
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
+import { Router } from "react-router-dom";
 
-import { render, screen } from "../../../../../../utils/test-utils";
+import { render, screen } from "../../../../../../utils/testUtils";
 import Item from "..";
 
 describe("Item", () => {
@@ -32,7 +33,7 @@ describe("Item", () => {
     // mock push function
     history.push = jest.fn();
 
-    const { getByText } = render(
+    render(
       <Router history={history}>
         <Item item={itemMock} />
       </Router>

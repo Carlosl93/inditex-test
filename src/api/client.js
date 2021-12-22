@@ -1,7 +1,6 @@
-import { create } from "apisauce";
+import axios from "axios";
 
-// define the api
-const client = create({
+const client = axios.create({
   baseURL: "https://front-test-api.herokuapp.com/api",
 });
 

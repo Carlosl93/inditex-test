@@ -20,6 +20,7 @@ function Description({ title, options, value, setValue }) {
               : {};
           return (
             <button
+              key={option.name}
               onClick={() => setValue(index)}
               style={selectedStyle}
               className={styles.actionButton}

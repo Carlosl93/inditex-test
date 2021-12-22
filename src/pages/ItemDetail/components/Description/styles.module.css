@@ -22,3 +22,14 @@
   margin-bottom: 10px;
   width: 350px;
 }
+
+.rowText {
+  display: flex;
+}
+
+.rowText > b {
+  margin-right: 5px;
+}
+.rowText > p {
+  margin-left: 5px;
+}

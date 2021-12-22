@@ -49,6 +49,7 @@ function ItemActions({ options, id }) {
         </div>
       )}
       <button
+        data-testid="button-cart"
         type="button"
         onClick={handleAddCart}
         className={styles.buttonCart}

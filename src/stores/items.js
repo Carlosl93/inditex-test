@@ -45,7 +45,7 @@ export const postCart = createAsyncThunk(
   async ({ id, colorCode, storageCode }, { rejectWithValue }) => {
     try {
       const response = await fetchPostCart({ id, colorCode, storageCode });
-      return response.data.count;
+      return response.data;
     } catch (err) {
       if (!err.response) {
         throw err;
@@ -65,17 +65,28 @@ export const itemsSlice = createSlice({
   },
   extraReducers: {
     // Get Items Action
+    [getItems.pending]: (state) => {
+      state.itemsLoading = true;
+    },
     [getItems.fulfilled]: (state, action) => {
-      console.log("heeey");
       state.items = action.payload;
+      state.itemsLoading = false;
     },
     // Post Cart Action
+    [postCart.pending]: (state) => {
+      state.cartLoading = true;
+    },
     [postCart.fulfilled]: (state, action) => {
-      state.cartNumber = action.payload;
+      state.cartNumber = action.payload.count;
+      state.cartLoading = false;
     },
     // Get Single Item Actions
+    [getSingleItem.pending]: (state) => {
+      state.singleItemLoading = true;
+    },
     [getSingleItem.fulfilled]: (state, action) => {
       state.singleItem = action.payload;
+      state.singleItemLoading = false;
     },
   },
 });

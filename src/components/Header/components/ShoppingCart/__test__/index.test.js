@@ -3,7 +3,7 @@ import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 
 import ShoppingCart from "..";
-import { render, screen } from "../../../../../utils/test-utils";
+import { render, screen } from "../../../../../utils/testUtils";
 
 const mockStore = configureStore([thunk]);
 

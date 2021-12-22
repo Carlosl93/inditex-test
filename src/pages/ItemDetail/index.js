@@ -32,10 +32,10 @@ function ItemDetail({ match }) {
 
   return (
     <>
-      <Link className={styles.backIcon} to="/">
+      <Link data-testid="redirect-list" className={styles.backIcon} to="/">
         <ChevronLeft className={styles.backIcon} />
       </Link>
-      <div className={styles.itemDetailContainer}>
+      <div data-testid="item-detail" className={styles.itemDetailContainer}>
         <div className={styles.itemDetailImage}>
           <img className={styles.itemImage} src={imgUrl} alt={brand} />
         </div>
