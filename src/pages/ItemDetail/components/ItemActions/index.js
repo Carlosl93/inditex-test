@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 function ItemActions({ options, id }) {
   const [colorValue, setColorValue] = useState(null);
   const [storageValue, setStorageValue] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -23,6 +24,8 @@ function ItemActions({ options, id }) {
           storageCode: options.storages[storageValue].code,
         })
       );
+    } else {
+      setErrorMsg(true);
     }
   };
 
@@ -52,6 +55,9 @@ function ItemActions({ options, id }) {
       >
         Agregar al carro
       </button>
+      {errorMsg && (
+        <p className={styles.errorMsg}>Debe escoger un color y una capacidad</p>
+      )}
     </div>
   );
 }

@@ -23,7 +23,7 @@ function ItemList() {
   );
 
   return (
-    <div className={styles.listContainer}>
+    <div data-testid="items-list" className={styles.listContainer}>
       <div className={styles.searchContainer}>
         <p className={styles.searchTitle}>Productos</p>
         <SearchBar />

@@ -15,7 +15,11 @@ function Item({ item }) {
         <p className={styles.itemModel}>{model}</p>
         <div className={styles.itemBuy}>
           <p className={styles.itemPrice}>{price ? `${price}€` : "-"}</p>
-          <Link className={styles.buyButton} to={`/item/${id}`}>
+          <Link
+            data-testid="redirect-detail"
+            className={styles.buyButton}
+            to={`/item/${id}`}
+          >
             <ChevronRight className={styles.buyIcon} />
           </Link>
         </div>

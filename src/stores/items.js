@@ -1,35 +1,57 @@
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import client, { CLIENT_URLS } from "../api/client";
+import { fetchItems, fetchPostCart, fetchSingleItem } from "../api/services";
 
-const itemsState = {
+export const itemsState = {
   items: [],
   singleItem: {},
   cartNumber: 0,
   searchItem: "",
 };
 
-export const getItems = createAsyncThunk("items/getItems", async () => {
-  const response = await client.any(CLIENT_URLS.GET_ITEMS);
-  return response.data;
-});
+export const getItems = createAsyncThunk(
+  "items/getItems",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await fetchItems();
+      return response.data;
+    } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
+      return rejectWithValue(err.response);
+    }
+  }
+);
 
 export const getSingleItem = createAsyncThunk(
   "items/getSingleItem",
-  async (id) => {
-    const request = CLIENT_URLS.GET_SINGLE_ITEM;
-    const response = await client.any(request(id));
-    return response.data;
+  async ({ id }, { rejectWithValue }) => {
+    try {
+      const response = await fetchSingleItem({ id });
+      return response.data;
+    } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
+      return rejectWithValue(err.response);
+    }
   }
 );
 
 export const postCart = createAsyncThunk(
   "items/postCart",
-  async ({ id, colorCode, storageCode }) => {
-    const request = CLIENT_URLS.POST_CART;
-    const response = await client.any(request({ id, colorCode, storageCode }));
-    return response.data.count;
+  async ({ id, colorCode, storageCode }, { rejectWithValue }) => {
+    try {
+      const response = await fetchPostCart({ id, colorCode, storageCode });
+      return response.data.count;
+    } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
+      return rejectWithValue(err.response);
+    }
   }
 );
 
@@ -44,6 +66,7 @@ export const itemsSlice = createSlice({
   extraReducers: {
     // Get Items Action
     [getItems.fulfilled]: (state, action) => {
+      console.log("heeey");
       state.items = action.payload;
     },
     // Post Cart Action

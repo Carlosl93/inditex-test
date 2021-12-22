@@ -2,21 +2,21 @@ import { create } from "apisauce";
 
 // define the api
 const client = create({
-  baseURL: "https://front-test-api.herokuapp.com",
+  baseURL: "https://front-test-api.herokuapp.com/api",
 });
 
 export const CLIENT_URLS = {
   GET_ITEMS: {
     method: "GET",
-    url: "/api/product",
+    url: "/product",
   },
   GET_SINGLE_ITEM: ({ id }) => ({
     method: "GET",
-    url: `/api/product/${id}`,
+    url: `/product/${id}`,
   }),
   POST_CART: ({ id, colorCode, storageCode }) => ({
     method: "POST",
-    url: "/api/cart",
+    url: "/cart",
     data: {
       id,
       colorCode,

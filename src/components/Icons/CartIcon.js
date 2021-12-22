@@ -2,7 +2,7 @@ import React from "react";
 
 function CartIcon({ className = "" }) {
   return (
-    <div className={className}>
+    <div data-testid="cart-icon" className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
