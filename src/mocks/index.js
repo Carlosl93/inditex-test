@@ -35,3 +35,11 @@ export const ITEM_DETAIL_MOCK = {
 };
 
 export const CART_MOCK = { count: 1 };
+
+export const OPTIONS_MOCK = {
+  colors: [
+    { code: 1000, name: "Black" },
+    { code: 1001, name: "White" },
+  ],
+  storages: [{ code: 2000, name: "32 GB" }],
+};

@@ -3,6 +3,7 @@ import React from "react";
 import { mocked } from "jest-mock";
 import userEvent from "@testing-library/user-event";
 import { createMemoryHistory } from "history";
+import { Router } from "react-router-dom";
 
 import { fetchSingleItem } from "../../../api/services";
 import { render, screen, waitFor } from "../../../utils/testUtils";
@@ -40,14 +41,18 @@ describe("ItemDetail", () => {
 
   test("Redirect to item list", async () => {
     const history = createMemoryHistory();
+
+    // mock push function
     history.push = jest.fn();
 
-    render(<ItemDetail />);
+    render(
+      <Router history={history}>
+        <ItemDetail />
+      </Router>
+    );
 
     userEvent.click(screen.getByTestId("redirect-list"));
 
-    await waitFor(() => {
-      expect(history.push).toHaveBeenCalledWith(`/item/${itemMock.id}`);
-    });
+    expect(history.push).toHaveBeenCalledWith("/");
   });
 });

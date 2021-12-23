@@ -32,17 +32,17 @@ function ItemActions({ options, id }) {
   return (
     <div className={styles.descriptionContainer}>
       <h3>Opciones</h3>
-      {options && options.colors && (
+      {options && (
         <div className={styles.actions}>
           <Action
             title="Seleccione un color: "
-            options={options.colors}
+            options={options.colors || []}
             value={colorValue}
             setValue={setColorValue}
           />
           <Action
             title="Seleccione la capacidad: "
-            options={options.storages}
+            options={options.storages || []}
             value={storageValue}
             setValue={setStorageValue}
           />
