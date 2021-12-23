@@ -33,3 +33,13 @@
 .rowText > p {
   margin-left: 5px;
 }
+
+@media (max-width: 640px) {
+  .descriptionContainer > h3 {
+    font-size: 26px;
+  }
+
+  .rowText {
+    font-size: 20px;
+  }
+}

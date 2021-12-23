@@ -9,3 +9,15 @@
 .searchInput::placeholder {
   color: #000;
 }
+
+@media (max-width: 640px) {
+  .searchInput {
+    font-size: 24px;
+    margin-top: 10px;
+    height: 60px;
+  }
+
+  .searchInput::placeholder {
+    font-size: 24px;
+  }
+}

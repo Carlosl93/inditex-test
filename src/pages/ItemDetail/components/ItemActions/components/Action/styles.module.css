@@ -23,3 +23,14 @@
 .actionButton:hover {
   background-color: #a7d1a2;
 }
+
+@media (max-width: 640px) {
+  .actionContainer > h4 {
+    font-size: 22px;
+  }
+
+  .actionButton {
+    height: 55px;
+    font-size: 24px;
+  }
+}

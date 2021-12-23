@@ -12,3 +12,10 @@
 .searchTitle {
   font-size: 34px;
 }
+
+@media (max-width: 640px) {
+  .searchContainer {
+    flex-direction: column;
+    padding: 0;
+  }
+}

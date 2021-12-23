@@ -64,3 +64,34 @@
   height: 15px;
   width: 20px;
 }
+
+@media (max-width: 640px) {
+  .itemContainer {
+    height: 360px;
+    max-width: none;
+    padding: 20px 0;
+    width: 80%;
+    margin-right: 0;
+  }
+
+  .itemBrand {
+    font-size: 28px;
+  }
+
+  .itemModel {
+    font-size: 20px;
+  }
+
+  .itemPrice {
+    font-size: 34px;
+  }
+
+  .buyButton {
+    width: 45px;
+  }
+
+  .buyIcon {
+    height: 45px;
+    width: 60px;
+  }
+}

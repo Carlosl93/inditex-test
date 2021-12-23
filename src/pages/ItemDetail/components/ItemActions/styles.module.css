@@ -42,3 +42,23 @@
   color: red;
   font-size: 12px;
 }
+
+@media (max-width: 640px) {
+  .descriptionContainer > h3 {
+    font-size: 26px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .buttonCart {
+    font-size: 24px;
+    width: 100%;
+    height: 55px;
+  }
+
+  .errorMsg {
+    font-size: 16px;
+  }
+}

@@ -31,8 +31,12 @@ function ItemDetail({ match }) {
   );
 
   return (
-    <>
-      <Link data-testid="redirect-list" className={styles.backIcon} to="/">
+    <div className={styles.container}>
+      <Link
+        data-testid="redirect-list"
+        className={styles.backIconContainer}
+        to="/"
+      >
         <ChevronLeft className={styles.backIcon} />
       </Link>
       <div data-testid="item-detail" className={styles.itemDetailContainer}>
@@ -44,7 +48,7 @@ function ItemDetail({ match }) {
           <Actions options={options} id={match.params.itemId} />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -15,3 +15,10 @@ body {
   height: 100%;
   padding: 100px 10em;
 }
+
+@media (max-width: 640px) {
+  .main {
+    width: 100%;
+    padding: 120px 0;
+  }
+}
