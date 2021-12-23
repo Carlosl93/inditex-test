@@ -1,5 +1,5 @@
 .shoppingContainer {
-  border-left: 3px solid #000;
+  border-left: 3px solid var(--black);
   height: 100%;
   padding: 10px 20px;
   position: relative;
@@ -12,10 +12,10 @@
 
 .cartNumber {
   align-items: center;
-  background-color: #a7d1a2;
+  background-color: var(--background-green);
   border-radius: 50%;
   bottom: 5px;
-  color: #000;
+  color: var(--black);
   display: flex;
   font-size: 15px;
   font-weight: 700;

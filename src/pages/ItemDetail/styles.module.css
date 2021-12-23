@@ -8,7 +8,7 @@
 
 .itemDetailImage {
   border-radius: 15px;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 15px;
 }
 

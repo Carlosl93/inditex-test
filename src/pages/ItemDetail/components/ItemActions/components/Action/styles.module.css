@@ -21,7 +21,7 @@
 }
 
 .actionButton:hover {
-  background-color: #a7d1a2;
+  background-color: var(--background-green);
 }
 
 @media (max-width: 640px) {

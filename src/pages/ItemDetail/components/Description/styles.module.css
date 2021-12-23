@@ -1,6 +1,6 @@
 .descriptionContainer {
   border-radius: 15px;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 15px;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .itemDetailAction {
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 15px;
   width: 100%;
 }

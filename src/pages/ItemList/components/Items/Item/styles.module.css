@@ -1,5 +1,5 @@
 .itemContainer {
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 15px;
   height: 300px;
   flex: 1 0 21%;
@@ -47,14 +47,14 @@
 }
 
 .buyButton {
-  background-color: #a7d1a2;
+  background-color: var(--background-green);
   border-radius: 50%;
   border: none;
   width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: var(--black);
 }
 
 .buyIcon {

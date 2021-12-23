@@ -17,7 +17,10 @@ function Action({ title, options, value, setValue }) {
           options.map((option, index) => {
             const selectedStyle =
               value === index || options.length === 1
-                ? { backgroundColor: "#a7d1a2", border: "1px solid #000" }
+                ? {
+                    backgroundColor: "#a7d1a2",
+                    border: "1px solid #000",
+                  }
                 : {};
             return (
               <button
