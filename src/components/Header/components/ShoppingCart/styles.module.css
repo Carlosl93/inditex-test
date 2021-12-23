@@ -9,3 +9,20 @@
   height: 40px;
   width: 40px;
 }
+
+.cartNumber {
+  align-items: center;
+  background-color: #a7d1a2;
+  border-radius: 50%;
+  bottom: 5px;
+  color: #000;
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  height: 23px;
+  justify-content: center;
+  right: 15px;
+  margin: 0;
+  position: absolute;
+  width: 23px;
+}

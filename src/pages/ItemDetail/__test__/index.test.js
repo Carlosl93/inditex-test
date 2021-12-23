@@ -20,7 +20,6 @@ describe("ItemDetail", () => {
   test("Render ItemDetail component", () => {
     render(<ItemDetail />);
 
-    // Check first dom elements
     expect(screen.getByTestId("item-detail")).toBeInTheDocument();
   });
 

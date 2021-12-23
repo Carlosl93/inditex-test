@@ -20,7 +20,6 @@ describe("Item", () => {
   test("Render Item component", async () => {
     render(<Item item={itemMock} />);
 
-    // Check first dom elements
     expect(screen.getByText(itemMock.brand)).toBeInTheDocument();
     expect(screen.getByText(itemMock.model)).toBeInTheDocument();
     expect(screen.getByText(`${itemMock.price}€`)).toBeInTheDocument();
